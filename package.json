@@ -1,0 +1,19 @@
+{
+  "name": "transaction-manager",
+  "version": "1.0.0",
+  "description": "Task related to replace squel with knex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinMilkbox/transaction-manager.git"
+  },
+  "author": "Vincenzo Francavilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinMilkbox/transaction-manager/issues"
+  },
+  "homepage": "https://github.com/VinMilkbox/transaction-manager#readme"
+}
