@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/VinMilkbox/transaction-manager/issues"
   },
-  "homepage": "https://github.com/VinMilkbox/transaction-manager#readme"
+  "homepage": "https://github.com/VinMilkbox/transaction-manager#readme",
+  "dependencies": {
+    "json-sql-builder2": "^1.0.24",
+    "knex": "^0.21.18",
+    "mysql2": "^2.2.5"
+  }
 }
