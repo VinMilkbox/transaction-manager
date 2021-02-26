@@ -4,7 +4,7 @@
   "description": "Task related to replace squel with knex",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/VinMilkbox/transaction-manager#readme",
   "dependencies": {
+    "jest": "^26.6.3",
     "json-sql-builder2": "^1.0.24",
     "knex": "^0.21.18",
     "mysql2": "^2.2.5"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }

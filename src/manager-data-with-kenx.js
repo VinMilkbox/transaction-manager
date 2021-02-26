@@ -1,4 +1,5 @@
 const knex = require('knex')({ client: 'mysql2' });
+const models = require('./tableModels');
 
 const aggregateVersionTableName = process.env.AGGREGATE_VERSION_TABLE_NAME || 'aggregate_versions';
 const eventStoreTableName = process.env.READ_MODEL_EVENT_STORE_TABLE_NAME || 'event_store_rm';
@@ -39,15 +40,11 @@ exports.insertMysqlEventStore = (events) => {
 };
 
 /** SELECT IN  */
-const modelAggregateVersion = {
-	lastVersion: 'latest_version',
-	aggregateId: 'aggregate_id',
-};
 exports.getLatestAggregateVersionsForAggregateIds = (aggregateIds) => {
-	let aggregateIds = [...new Set(aggregateIds)];
+	let aggregateArray = [...new Set(aggregateIds)];
 	return knex(aggregateVersionTableName)
 		.select(modelAggregateVersion.lastVersion, modelAggregateVersion.aggregateId)
-		.whereIn(modelAggregateVersion.aggregateId, aggregateIds)
+		.whereIn(modelAggregateVersion.aggregateId, aggregateArray)
 		.toSQL()
 		.toNative();
 };

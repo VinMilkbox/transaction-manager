@@ -70,9 +70,26 @@ exports.upsertAggregateVersionSQL = (versionInfo) => {
 	}
 };
 
+/**
+ * Update records general method
+ *
+ * @param {string} tableName Pass table name as string
+ * @param {object} whereClause Object type with {equal: {field: value}}
+ * @param {object} fieldSet Object type with {field: value}
+ * @param {object} objValues
+ */
+exports.updateRecords = (tableName, whereClause, fieldSet, objValues) => {
+	return sql.$update({
+		$table: tableName,
+		$set: fieldSet,
+		$where: whereClause,
+	});
+};
+
+const whereClausole = (where) => {};
 /** DELETE METHOD */
 exports.deleteAggregateVersionSQL = (versionInfo) => {
-	return sql.$update({
+	return sql.$delete({
 		$from: aggregateVersionTableName,
 		$where: {
 			aggregate_id: $eq(versionInfo.aggregateId),
